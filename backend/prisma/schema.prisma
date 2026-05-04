@@ -7,7 +7,8 @@ datasource db {
 }
 
 model User {
-  id        String   @id // ID que vendrá de Clerk
+  id        String   @id @default(uuid())
+  clerkId   String   @unique
   username  String   @unique
   email     String   @unique
   avatarUrl String?

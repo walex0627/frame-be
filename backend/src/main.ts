@@ -10,7 +10,11 @@ async function bootstrap() {
   const port = process.env.PORT ?? 3000;
 
   // Validaciones
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
+  app.useGlobalPipes(new ValidationPipe({ 
+    whitelist: true,
+    forbidNonWhitelisted: true, 
+    transform: true 
+  }));
 
   // Swagger
   const config = new DocumentBuilder()
