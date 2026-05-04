@@ -1,11 +1,11 @@
 services:
   api:
-    build: .
+    build: ./backend
     container_name: frame_backend
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - ./backend/.env
     volumes:
-      - .:/usr/src/app
+      - ./backend:/usr/src/app
       - /usr/src/app/node_modules
